@@ -1,0 +1,10 @@
+- hosts: all
+  vars_prompt:
+  - name: "kube_password"
+    prompt: "Enter a password for user 'kube'"
+    private: yes
+    encrypt: "md5_crypt"
+    confirm: yes
+    salt_size: 7
+  roles:
+    - setup
